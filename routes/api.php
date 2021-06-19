@@ -18,6 +18,10 @@ Route::get("hello", function (){
     return "Hello from the other side";
 });
 
+Route::apiResource('countries',\App\Http\Controllers\CountryController::class);
+
+
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
