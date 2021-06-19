@@ -11,7 +11,9 @@ class CountryController extends Controller
 
     function index(Request $request){
         $title  = $request->query('title'); //for handling query params
-        return Country::where('title', 'like', '%'.$title."%")->get();
+        $res= Country::where('title', 'like', '%'.$title."%")->get();
+
+        return response()->jsonAs('Countries', $res, 200);
     }
 
 
@@ -19,7 +21,9 @@ class CountryController extends Controller
         $request->validate([
             'title' => 'required'
         ]);
-        return  Country::create($request->all());
+
+        $res= Country::create($request->all());
+        return response()->jsonAs('Countries',$res, 201 );
     }
 
 
