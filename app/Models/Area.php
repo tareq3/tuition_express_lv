@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Area extends Model
 {
     use HasFactory;
+
+    protected $fillable = ["title", "description", "sub", "district_id"];
 }

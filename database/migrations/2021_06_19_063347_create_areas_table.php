@@ -19,8 +19,8 @@ class CreateAreasTable extends Migration
             $table->string('description');
             $table->timestamps();
             $table->string("sub")->nullable();
-            $table->unsignedBigInteger('country_id');
-            $table->foreign('country_id')->references('id')->on('countries');
+            $table->unsignedBigInteger('district_id');
+            $table->foreign('district_id')->references('id')->on('districts');
 
         });
     }

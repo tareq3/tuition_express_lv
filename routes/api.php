@@ -18,7 +18,9 @@ Route::get("hello", function (){
     return "Hello from the other side";
 });
 
-Route::apiResource('countries',\App\Http\Controllers\CountryController::class);
+Route::apiResource('districts',\App\Http\Controllers\DistrictController::class);
+
+Route::apiResource('areas',\App\Http\Controllers\AreaController::class);
 
 
 
